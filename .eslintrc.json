@@ -1,0 +1,16 @@
+{
+  "extends": ["eslint:recommended", "prettier"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "plugins": ["babel", "react"],
+  "rules": {
+    "react/jsx-uses-vars": 2,
+    "no-invalid-this": 0,
+    "babel/no-invalid-this": 1,
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }]
+  }
+}

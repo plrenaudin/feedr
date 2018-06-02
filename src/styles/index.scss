@@ -1,0 +1,50 @@
+@import "./variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bgColor;
+  font-family: Helvetica, Arial, sans-serif;
+  color: $fontColor;
+}
+
+input[type="text"] {
+  @include shadow;
+}
+
+.content {
+  padding: 2rem;
+}
+
+input {
+  background-color: transparent;
+  border: 0px;
+  @include inputSpacing;
+}
+
+button {
+  @include inputSpacing;
+  background-color: $mainColorBg;
+  border: 1px solid $mainColor;
+  border-radius: 0.3rem;
+  @include shadow;
+  transition: all ease-in-out 0.2s;
+  &:hover {
+    cursor: pointer;
+    box-shadow: none;
+
+    // background-color: transparent;
+  }
+  &:active {
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
+input:focus,
+button:focus {
+  outline-color: $mainColor;
+}

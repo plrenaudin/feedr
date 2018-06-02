@@ -1,0 +1,14 @@
+$bgColor: #fafafa;
+$shadow: #888;
+$fontColor: #333;
+$mainColor: #8bc34a;
+$secondaryColor: #ff9800;
+$mainColorBg: lighten(#8bc34a, 30);
+
+@mixin shadow {
+  box-shadow: 0 1px 3px $shadow;
+}
+
+@mixin inputSpacing {
+  padding: 0.3rem 0.5rem;
+}
