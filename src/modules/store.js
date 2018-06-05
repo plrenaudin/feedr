@@ -1,7 +1,9 @@
-import { observable, action, toJS } from "mobx";
+import { observable, action, toJS, configure } from "mobx";
 import db, { EMPTY_RECORD } from "./db";
 import { shortFormatDate } from "./formatter";
 import addDays from "date-fns/add_days";
+
+configure({ enforceActions: true });
 
 export default class Store {
   day = observable({ ...EMPTY_RECORD, date: shortFormatDate() });
@@ -18,6 +20,11 @@ export default class Store {
 
   addItem = action((meal, data) => {
     this.day[meal].push(data);
+    this.save();
+  });
+
+  removeItem = action((meal, index) => {
+    this.day[meal].splice(index, 1);
     this.save();
   });
 

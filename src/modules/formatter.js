@@ -6,4 +6,6 @@ import format from "date-fns/format";
  */
 const shortFormatDate = (date = new Date()) => format(date, "YYYY-MM-DD");
 
-export { shortFormatDate };
+const longFormatDate = (date = shortFormatDate()) => format(new Date(date), "dddd Do MMMM");
+
+export { shortFormatDate, longFormatDate };

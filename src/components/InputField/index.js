@@ -7,6 +7,13 @@ const handleChange = (props, event) => {
 
 const reset = () => (event.target.value = "");
 
-const InputField = props => <input type="text" onChange={linkEvent(props, handleChange)} />;
+const InputField = props => (
+  <input
+    type="text"
+    onChange={linkEvent(props, handleChange)}
+    disabled={!!props.disabled}
+    placeholder={props.placeholder}
+  />
+);
 
 export default InputField;
