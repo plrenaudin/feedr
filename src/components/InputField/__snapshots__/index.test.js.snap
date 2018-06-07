@@ -1,3 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `undefined`;
+exports[`Matches the snapshot 1`] = `
+<input
+  placeholder="test value"
+  type="text"
+/>
+`;
+
+exports[`Matches the snapshot when disabled 1`] = `
+<input
+  disabled=""
+  placeholder="test value"
+  type="text"
+/>
+`;

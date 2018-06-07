@@ -1,8 +1,12 @@
 import { render } from "inferno";
 import InputField from ".";
 
-it("renders without crashing", () => {
-    const div = document.createElement("div");
+it("Matches the snapshot", () => {
+  const div = document.createElement("div");
+  expect(render(<InputField placeholder={"test value"} />, div).dom).toMatchSnapshot();
+});
 
-    expect(render(<InputField value={"test value"} />, div).dom).toMatchSnapshot();
+it("Matches the snapshot when disabled", () => {
+  const div = document.createElement("div");
+  expect(render(<InputField placeholder={"test value"} disabled={true} />, div).dom).toMatchSnapshot();
 });
