@@ -37,9 +37,12 @@ export default class Store {
   }
 
   load = action(date => {
-    return db.get(date).then(data => {
-      this.set(data || { date });
-    });
+    return db
+      .get(date)
+      .then(data => {
+        this.set(data || { date });
+      })
+      .catch(e => console.error(e));
   });
 
   save() {

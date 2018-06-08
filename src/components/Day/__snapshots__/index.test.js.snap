@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<section
+  class="day"
+>
+  <h2>
+    Thursday 7th June
+  </h2>
+  <div
+    class="meal"
+  >
+    <h3>
+      <span
+        class="fa-layers fa-fw"
+      >
+        <i
+          class="fas fa-circle"
+          data-fa-transform="grow-6"
+        />
+        <i
+          class="fas fa-utensils"
+          data-fa-transform="shrink-2"
+        />
+      </span>
+      Breakfast
+    </h3>
+    <div
+      class="mealContent"
+    >
+      <ul>
+        <li>
+          <span>
+            morning Meal 1
+          </span>
+          <a
+            role="button"
+          >
+            <i
+              class="far fa-trash-alt"
+            />
+          </a>
+        </li>
+      </ul>
+      <input
+        placeholder="What else...?"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="meal"
+  >
+    <h3>
+      <span
+        class="fa-layers fa-fw"
+      >
+        <i
+          class="fas fa-circle"
+          data-fa-transform="grow-6"
+        />
+        <i
+          class="fas fa-utensils"
+          data-fa-transform="shrink-2"
+        />
+      </span>
+      Lunch
+    </h3>
+    <div
+      class="mealContent"
+    >
+      <ul />
+      <input
+        placeholder="What did you eat?"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="meal"
+  >
+    <h3>
+      <span
+        class="fa-layers fa-fw"
+      >
+        <i
+          class="fas fa-circle"
+          data-fa-transform="grow-6"
+        />
+        <i
+          class="fas fa-utensils"
+          data-fa-transform="shrink-2"
+        />
+      </span>
+      Diner
+    </h3>
+    <div
+      class="mealContent"
+    >
+      <ul>
+        <li>
+          <span>
+            evening Meal 1
+          </span>
+          <a
+            role="button"
+          >
+            <i
+              class="far fa-trash-alt"
+            />
+          </a>
+        </li>
+        <li>
+          <span>
+            evening Meal 2
+          </span>
+          <a
+            role="button"
+          >
+            <i
+              class="far fa-trash-alt"
+            />
+          </a>
+        </li>
+      </ul>
+      <input
+        placeholder="What else...?"
+        type="text"
+      />
+    </div>
+  </div>
+</section>
+`;

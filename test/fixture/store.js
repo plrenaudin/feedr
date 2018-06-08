@@ -18,6 +18,7 @@ const data = {
 const store = new Store();
 store.load = date => store.set(data[date] || { date });
 store.save = jest.fn();
+store.load("2018-06-07");
 
 export default store;
 export { data };
