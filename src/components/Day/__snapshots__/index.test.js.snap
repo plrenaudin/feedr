@@ -33,13 +33,24 @@ exports[`Matches the snapshot 1`] = `
           <span>
             morning Meal 1
           </span>
-          <a
-            role="button"
+          <span
+            class="actions"
           >
-            <i
-              class="far fa-trash-alt"
-            />
-          </a>
+            <a
+              role="button"
+            >
+              <i
+                class="fas fa-tag"
+              />
+            </a>
+            <a
+              role="button"
+            >
+              <i
+                class="far fa-trash-alt"
+              />
+            </a>
+          </span>
         </li>
       </ul>
       <input
@@ -102,25 +113,47 @@ exports[`Matches the snapshot 1`] = `
           <span>
             evening Meal 1
           </span>
-          <a
-            role="button"
+          <span
+            class="actions"
           >
-            <i
-              class="far fa-trash-alt"
-            />
-          </a>
+            <a
+              role="button"
+            >
+              <i
+                class="fas fa-tag"
+              />
+            </a>
+            <a
+              role="button"
+            >
+              <i
+                class="far fa-trash-alt"
+              />
+            </a>
+          </span>
         </li>
         <li>
           <span>
             evening Meal 2
           </span>
-          <a
-            role="button"
+          <span
+            class="actions"
           >
-            <i
-              class="far fa-trash-alt"
-            />
-          </a>
+            <a
+              role="button"
+            >
+              <i
+                class="fas fa-tag"
+              />
+            </a>
+            <a
+              role="button"
+            >
+              <i
+                class="far fa-trash-alt"
+              />
+            </a>
+          </span>
         </li>
       </ul>
       <input
@@ -129,5 +162,21 @@ exports[`Matches the snapshot 1`] = `
       />
     </div>
   </div>
+  <h3>
+    <span
+      class="fa-layers fa-fw"
+    >
+      <i
+        class="fas fa-circle"
+        data-fa-transform="grow-6"
+      />
+      <i
+        class="fas fa-edit"
+        data-fa-transform="shrink-4"
+      />
+    </span>
+    Notes
+  </h3>
+  <textarea />
 </section>
 `;

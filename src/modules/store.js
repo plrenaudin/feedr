@@ -11,20 +11,28 @@ export default class Store {
     this.load(shortFormatDate());
   }
 
-  set = action(({ date = shortFormatDate(), morning = [], noon = [], evening = [] }) => {
-    this.day.date = date;
-    this.day.morning = morning;
-    this.day.noon = noon;
-    this.day.evening = evening;
-  });
+  set = action(
+    ({ date = shortFormatDate(), morning = [], noon = [], evening = [], notes = "" }) => {
+      this.day.date = date;
+      this.day.morning = morning;
+      this.day.noon = noon;
+      this.day.evening = evening;
+      this.day.notes = notes;
+    }
+  );
 
   addItem = action((meal, data) => {
-    this.day[meal].push(data);
+    this.day[meal].push(data.trim());
     this.save();
   });
 
   removeItem = action((meal, index) => {
     this.day[meal].splice(index, 1);
+    this.save();
+  });
+
+  editNotes = action(notes => {
+    this.day.notes = notes.trim();
     this.save();
   });
 

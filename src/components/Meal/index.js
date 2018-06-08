@@ -17,9 +17,14 @@ const labels = {
 const MealItem = ({ idx, item, meal, store }) => (
   <li>
     <span>{item}</span>
-    <a role="button" onClick={removeItem(store, meal, idx)}>
-      <i class="far fa-trash-alt" />
-    </a>
+    <span class="actions">
+      <a role="button" onClick={() => {}}>
+        <i class="fas fa-tag" />
+      </a>
+      <a role="button" onClick={removeItem(store, meal, idx)}>
+        <i class="far fa-trash-alt" />
+      </a>
+    </span>
   </li>
 );
 
@@ -33,7 +38,9 @@ const Meal = ({ meal, store }) => (
       {labels[meal]}
     </h3>
     <div class="mealContent">
-      <ul $HasNonKeyedChildren>{store.day[meal].map((item, idx) => <MealItem {...{ idx, item, meal, store }} />)}</ul>
+      <ul $HasNonKeyedChildren>
+        {store.day[meal].map((item, idx) => <MealItem {...{ idx, item, meal, store }} />)}
+      </ul>
       <InputField
         onChange={addItem(store, meal)}
         placeholder={store.day[meal].length === 0 ? "What did you eat?" : "What else...?"}

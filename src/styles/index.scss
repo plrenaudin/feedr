@@ -12,21 +12,23 @@ body {
   color: $fontColor;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
   @include shadow;
+  width: 100%;
 }
-
+textarea {
+  min-height: 5rem;
+}
 .content {
   padding: 2rem;
 }
 
-input {
-  background-color: transparent;
+input,
+textarea {
+  background-color: $fgColor;
   border: 0px;
   @include inputSpacing;
-  &[type="text"] {
-    width: 100%;
-  }
 }
 
 button {
@@ -47,6 +49,7 @@ button {
     background-color: transparent;
   }
 }
+textarea:focus,
 input:focus,
 button:focus {
   outline-color: $mainColor;
@@ -59,9 +62,6 @@ h2 {
   h2 {
     text-align: center;
   }
-}
-
-.meal {
   h3 {
     margin-left: 1rem;
     padding-left: 1.5rem;
@@ -74,16 +74,29 @@ h2 {
     .fa-circle {
       color: $mainColor;
     }
-    .fa-utensils {
-      color: $bgColor;
+    .fa-utensils,
+    .fa-edit {
+      color: $fgColor;
     }
   }
+}
+
+.meal {
   ul {
+    background-color: $fgColor;
     list-style-type: none;
     li {
       display: flex;
       padding: 0.5rem;
       justify-content: space-between;
+      .actions {
+        a {
+          padding-left: 2rem;
+          &:first {
+            padding-left: 0;
+          }
+        }
+      }
     }
   }
   .mealContent {
