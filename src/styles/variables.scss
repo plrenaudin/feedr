@@ -6,6 +6,16 @@ $mainColor: #8bc34a;
 $secondaryColor: #ff9800;
 $mainColorBg: lighten(#8bc34a, 30);
 $grey: #999;
+// 1: "Fruits",
+$color1: #f44336;
+// 2: "Vegetables",
+$color2: #4caf50;
+// 3: "Grains",
+$color3: #795548;
+// 4: "Proteins",
+$color4: #ff9800;
+// 5: "Dairy"
+$color5: #2196f3;
 
 @mixin shadow {
   box-shadow: 0 1px 3px $shadow;

@@ -107,6 +107,34 @@ exports[`Matches the snapshot 1`] = `
           data-fa-transform="shrink-2"
         />
       </span>
+      Snack
+    </h3>
+    <div
+      class="mealContent"
+    >
+      <ul />
+      <input
+        placeholder="What did you eat?"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="meal"
+  >
+    <h3>
+      <span
+        class="fa-layers fa-fw"
+      >
+        <i
+          class="fas fa-circle"
+          data-fa-transform="grow-6"
+        />
+        <i
+          class="fas fa-utensils"
+          data-fa-transform="shrink-2"
+        />
+      </span>
       Diner
     </h3>
     <div

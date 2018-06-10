@@ -13,6 +13,7 @@ const Day = ({ store }) => {
       <h2>{longFormatDate(store.day.date)}</h2>
       <Meal meal="morning" />
       <Meal meal="noon" />
+      <Meal meal="snack" />
       <Meal meal="evening" />
       <h3>
         <span class="fa-layers fa-fw">

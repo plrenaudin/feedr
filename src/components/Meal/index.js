@@ -12,6 +12,7 @@ const removeItem = (store, meal, idx) => () => {
 const labels = {
   morning: "Breakfast",
   noon: "Lunch",
+  snack: "Snack",
   evening: "Diner"
 };
 

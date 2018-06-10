@@ -5,6 +5,7 @@ const EMPTY_RECORD = {
   morning: [],
   noon: [],
   evening: [],
+  snack: [],
   notes: "",
   date: null
 };

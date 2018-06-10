@@ -50,10 +50,13 @@ class FoodCategoryPicker extends Component {
                 {Object.keys(FOOD_TYPES).map(key => (
                   <li
                     key={key}
-                    class={this.state.selected.includes(key) && "selected"}
+                    class={`color${key} ${this.state.selected.includes(key) && "selected"}`}
                     onClick={linkEvent(this, this.toggleItem(key))}
                   >
                     {FOOD_TYPES[key]}
+                    <span class="check">
+                      <i class="fas fa-check" />
+                    </span>
                   </li>
                 ))}
               </ul>
