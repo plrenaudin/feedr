@@ -5,6 +5,14 @@ import addDays from "date-fns/add_days";
 
 configure({ enforceActions: true });
 
+export const FOOD_TYPES = {
+  1: "Fruits",
+  2: "Vegetables",
+  3: "Grains",
+  4: "Proteins",
+  5: "Dairy"
+};
+
 export default class Store {
   day = observable({ ...EMPTY_RECORD, date: shortFormatDate() });
   constructor() {
@@ -22,12 +30,17 @@ export default class Store {
   );
 
   addItem = action((meal, data) => {
-    this.day[meal].push(data.trim());
+    this.day[meal].push({ name: data.trim() });
     this.save();
   });
 
   removeItem = action((meal, index) => {
     this.day[meal].splice(index, 1);
+    this.save();
+  });
+
+  editItemCategory = action((meal, index, data) => {
+    this.day[meal][index].categories = data;
     this.save();
   });
 

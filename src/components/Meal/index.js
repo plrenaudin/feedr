@@ -1,5 +1,6 @@
 import InputField from "../InputField";
 import { inject, observer } from "inferno-mobx";
+import FoodCategoryPicker from "../FoodCategoryPicker";
 
 const addItem = (store, meal) => value => {
   store.addItem(meal, value);
@@ -16,11 +17,9 @@ const labels = {
 
 const MealItem = ({ idx, item, meal, store }) => (
   <li>
-    <span>{item}</span>
+    <span>{item.name}</span>
     <span class="actions">
-      <a role="button" onClick={() => {}}>
-        <i class="fas fa-tag" />
-      </a>
+      <FoodCategoryPicker {...{ meal, index: idx }} />
       <a role="button" onClick={removeItem(store, meal, idx)}>
         <i class="far fa-trash-alt" />
       </a>

@@ -80,7 +80,30 @@ h2 {
     }
   }
 }
-
+.food-type-picker {
+  .picker-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $grey;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .picker-content {
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    background-color: $fgColor;
+    width: 100%;
+    padding: 1rem;
+    li.selected {
+      background-color: $mainColor;
+    }
+  }
+}
 .meal {
   ul {
     background-color: $fgColor;
@@ -90,6 +113,7 @@ h2 {
       padding: 0.5rem;
       justify-content: space-between;
       .actions {
+        display: flex;
         a {
           padding-left: 2rem;
           &:first {
