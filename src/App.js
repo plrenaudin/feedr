@@ -9,10 +9,6 @@ class App extends Component {
     this.store = props.store;
   }
 
-  onClick() {
-    //db.get(["2018-05-31", "2018-06-01", "2018-06-02"]).then(values => console.log("coucou", values));
-  }
-
   onTouchStart = e => {
     swiper.init(e);
   };
