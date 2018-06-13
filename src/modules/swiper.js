@@ -16,9 +16,9 @@ export default {
     if (Math.abs(x) > SWIPE_THRESHOLD || Math.abs(y) > SWIPE_THRESHOLD) {
       if (yx <= limit) {
         if (x < 0) {
-          return "RIGHT";
-        } else {
           return "LEFT";
+        } else {
+          return "RIGHT";
         }
       }
       if (xy <= limit) {
