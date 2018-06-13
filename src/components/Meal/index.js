@@ -16,12 +16,12 @@ const labels = {
   evening: "Diner"
 };
 
-const MealItem = ({ idx, item, meal, store }) => (
+const MealItem = ({ index, item, meal, store }) => (
   <li>
     <span>{item.name}</span>
     <span class="actions">
-      <FoodCategoryPicker {...{ meal, index: idx }} />
-      <a role="button" onClick={removeItem(store, meal, idx)}>
+      <FoodCategoryPicker {...{ meal, index }} />
+      <a role="button" onClick={removeItem(store, meal, index)}>
         <i class="far fa-trash-alt" />
       </a>
     </span>
@@ -38,8 +38,10 @@ const Meal = ({ meal, store }) => (
       {labels[meal]}
     </h3>
     <div class="mealContent">
-      <ul $HasNonKeyedChildren>
-        {store.day[meal].map((item, idx) => <MealItem {...{ idx, item, meal, store }} />)}
+      <ul $HasKeyedChildren>
+        {store.day[meal].map((item, index) => (
+          <MealItem key={store.day.date + index} {...{ index, item, meal, store }} />
+        ))}
       </ul>
       <InputField
         onChange={addItem(store, meal)}

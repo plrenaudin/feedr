@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches the snapshot 1`] = `undefined`;
+exports[`Matches the snapshot 1`] = `
+<div
+  class="food-type-picker"
+>
+  <a
+    role="button"
+  >
+    <i
+      class="fas fa-tag"
+    />
+  </a>
+</div>
+`;
