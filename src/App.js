@@ -2,6 +2,7 @@ import { Component } from "inferno";
 import Day from "./components/Day";
 import { inject } from "inferno-mobx";
 import swiper from "./modules/swiper";
+import ExportImport from "./components/ExportImport";
 
 class App extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class App extends Component {
     return (
       <div class="content" ref={rootDiv => (this.rootDiv = rootDiv)}>
         <Day />
+        <ExportImport />
       </div>
     );
   }

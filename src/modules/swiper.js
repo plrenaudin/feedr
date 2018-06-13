@@ -1,5 +1,6 @@
 let start;
 const SWIPE_THRESHOLD = 30;
+const limit = Math.tan(25 * 1.5 / 180 * Math.PI);
 
 export default {
   init: e => {
@@ -8,14 +9,25 @@ export default {
   },
   evaluate: e => {
     const touchInfo = e.changedTouches[0];
-    if (start.x > touchInfo.screenX + SWIPE_THRESHOLD) {
-      return "LEFT";
-    } else if (start.x + SWIPE_THRESHOLD < touchInfo.screenX) {
-      return "RIGHT";
-    } else if (start.y + SWIPE_THRESHOLD < touchInfo.screenY) {
-      return "DOWN";
-    } else if (start.y > touchInfo.screenY + SWIPE_THRESHOLD) {
-      return "UP";
+    let x = touchInfo.screenX - start.x;
+    let y = touchInfo.screenY - start.y;
+    let xy = Math.abs(x / y);
+    let yx = Math.abs(y / x);
+    if (Math.abs(x) > SWIPE_THRESHOLD || Math.abs(y) > SWIPE_THRESHOLD) {
+      if (yx <= limit) {
+        if (x < 0) {
+          return "LEFT";
+        } else {
+          return "RIGHT";
+        }
+      }
+      if (xy <= limit) {
+        if (y < 0) {
+          return "UP";
+        } else {
+          return "DOWN";
+        }
+      }
     }
   }
 };

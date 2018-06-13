@@ -16,6 +16,14 @@ const dbPromise = idb.open("keyval-store", 1, upgradeDB => {
 });
 
 const db = {
+  getAll() {
+    return dbPromise.then(db =>
+      db
+        .transaction("keyval")
+        .objectStore("keyval")
+        .getAll()
+    );
+  },
   get(key) {
     return dbPromise.then(db => {
       if (Array.isArray(key)) {
@@ -33,6 +41,13 @@ const db = {
     return dbPromise.then(db => {
       const tx = db.transaction("keyval", "readwrite");
       tx.objectStore("keyval").put(val, key);
+      return tx.complete;
+    });
+  },
+  import(data) {
+    return dbPromise.then(db => {
+      const tx = db.transaction("keyval", "readwrite");
+      data.forEach(item => tx.objectStore("keyval").put(item, item.date));
       return tx.complete;
     });
   },

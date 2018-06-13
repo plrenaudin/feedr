@@ -67,6 +67,6 @@ export default class Store {
   });
 
   save() {
-    return db.set(this.day.date, toJS(this.day));
+    return db.set(this.day.date, toJS(this.day)).catch(e => console.error(e));
   }
 }
