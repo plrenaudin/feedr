@@ -11,6 +11,6 @@ it("Matches the snapshot", () => {
         <FoodCategoryPicker meal="morning" index={0} />
       </Provider>,
       div
-    ).dom
+    ).props.children.dom
   ).toMatchSnapshot();
 });
