@@ -15,28 +15,33 @@ class Swipeable extends Component {
     swiper.init(e);
   };
 
+  translateRight = () => `translateX(${screenSize.width}px)`;
+
+  translateLeft = () => `translateX(-${screenSize.width}px)`;
+
   onTouchEnd = e => {
     const transition = `transform ${animationDurationSeconds * 0.5}s ease-out`;
+    let callback;
     switch (swiper.evaluateSwipe(e).direction) {
       case "RIGHT":
-        this.props.onRightSwipe();
+        callback = this.props.onRightSwipe;
         this.setState({
           transition,
-          transform: `translateX(${screenSize.width}px)`
+          transform: this.translateRight()
         });
         setTimeout(() => {
-          this.setState({ transition: "none", transform: `translateX(-${screenSize.width}px)` });
+          this.setState({ transition: "none", transform: this.translateLeft() });
         }, animationDurationSeconds * 0.25 * 1000);
 
         break;
       case "LEFT":
-        this.props.onLeftSwipe();
+        callback = this.props.onLeftSwipe;
         this.setState({
           transition,
-          transform: `translateX(-${screenSize.width}px)`
+          transform: this.translateLeft()
         });
         setTimeout(() => {
-          this.setState({ transition: "none", transform: `translateX(${screenSize.width}px)` });
+          this.setState({ transition: "none", transform: this.translateRight() });
         }, animationDurationSeconds * 0.25 * 1000);
         break;
     }
@@ -46,6 +51,7 @@ class Swipeable extends Component {
         transition,
         transform: "none"
       });
+      callback();
     }, animationDurationSeconds * 0.5 * 1000);
     setTimeout(() => {
       this.setState({
