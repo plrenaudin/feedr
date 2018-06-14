@@ -20,10 +20,18 @@ export default class Store {
   }
 
   set = action(
-    ({ date = shortFormatDate(), morning = [], noon = [], evening = [], notes = "" }) => {
+    ({
+      date = shortFormatDate(),
+      morning = [],
+      noon = [],
+      evening = [],
+      snack = [],
+      notes = ""
+    }) => {
       this.day.date = date;
       this.day.morning = morning;
       this.day.noon = noon;
+      this.day.snack = snack;
       this.day.evening = evening;
       this.day.notes = notes;
     }
