@@ -51,7 +51,7 @@ class Swipeable extends Component {
         transition,
         transform: "none"
       });
-      callback();
+      callback && callback();
     }, animationDurationSeconds * 0.5 * 1000);
     setTimeout(() => {
       this.setState({
