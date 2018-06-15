@@ -118,12 +118,16 @@ h2 {
     font-weight: bold;
     color: $fgColor;
     li {
-      margin: 0.3rem 0;
+      margin: 0.5rem 0;
       @include shadow;
       .check {
         display: none;
       }
       &.selected {
+        box-shadow: none;
+        border-radius: 3px;
+        outline: 1px solid $fgColor;
+        outline-offset: -3px;
         .check {
           display: inherit;
         }
@@ -137,15 +141,15 @@ h2 {
     list-style-type: none;
     li {
       display: flex;
-      padding: 0.7rem 0.5rem;
+      padding: 0.5rem;
       justify-content: space-between;
+      align-items: center;
       .actions {
+        align-items: center;
         display: flex;
         a {
+          padding: 0.5rem;
           margin-left: 2rem;
-          &:first {
-            margin-left: 0;
-          }
         }
       }
     }
