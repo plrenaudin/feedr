@@ -33,7 +33,7 @@ exports[`Matches the snapshot 1`] = `
           <span>
             morning Meal 1
           </span>
-          <span
+          <div
             class="actions"
           >
             <div
@@ -54,7 +54,7 @@ exports[`Matches the snapshot 1`] = `
                 class="far fa-trash-alt"
               />
             </a>
-          </span>
+          </div>
         </li>
       </ul>
       <input
@@ -145,7 +145,7 @@ exports[`Matches the snapshot 1`] = `
           <span>
             evening Meal 1
           </span>
-          <span
+          <div
             class="actions"
           >
             <div
@@ -166,13 +166,13 @@ exports[`Matches the snapshot 1`] = `
                 class="far fa-trash-alt"
               />
             </a>
-          </span>
+          </div>
         </li>
         <li>
           <span>
             evening Meal 2
           </span>
-          <span
+          <div
             class="actions"
           >
             <div
@@ -193,7 +193,7 @@ exports[`Matches the snapshot 1`] = `
                 class="far fa-trash-alt"
               />
             </a>
-          </span>
+          </div>
         </li>
       </ul>
       <input

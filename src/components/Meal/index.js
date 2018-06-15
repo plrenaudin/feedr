@@ -19,12 +19,12 @@ const labels = {
 const MealItem = ({ index, item, meal, store }) => (
   <li>
     <span>{item.name}</span>
-    <span class="actions">
+    <div class="actions">
       <FoodCategoryPicker {...{ meal, index }} />
       <a role="button" onClick={removeItem(store, meal, index)}>
         <i class="far fa-trash-alt" />
       </a>
-    </span>
+    </div>
   </li>
 );
 
