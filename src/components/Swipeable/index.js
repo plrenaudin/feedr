@@ -5,21 +5,20 @@ export const animationDurationSeconds = 0.5;
 const screenSize = { width: screen.width, height: screen.height };
 
 class Swipeable extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.store = props.store;
     this.state = { transition: "none", transform: "none" };
   }
 
-  onTouchStart = e => {
-    swiper.init(e);
-  };
+  onTouchStart = e => this.context.isSwipable && swiper.init(e);
 
   translateRight = () => `translateX(${screenSize.width}px)`;
 
   translateLeft = () => `translateX(-${screenSize.width}px)`;
 
   onTouchEnd = e => {
+    if (!this.context.isSwipable) return;
     const transition = `transform ${animationDurationSeconds * 0.5}s ease-out`;
     let callback;
     switch (swiper.evaluateSwipe(e).direction) {
@@ -60,10 +59,8 @@ class Swipeable extends Component {
     }, animationDurationSeconds * 1000);
   };
 
-  onTouchMove = e => {
-    const trans = swiper.evaluateSwipeTranslation(e);
-    this.setState({ transform: trans });
-  };
+  onTouchMove = e =>
+    this.context.isSwipable && this.setState({ transform: swiper.evaluateSwipeTranslation(e) });
 
   componentDidMount() {
     if (!this.rootDiv) return;

@@ -3,8 +3,8 @@ import { inject } from "inferno-mobx";
 import { FOOD_TYPES } from "../../modules/store";
 
 class FoodCategoryPicker extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.meal = props.meal;
     this.mealItemIndex = props.index;
     this.store = props.store;
@@ -16,10 +16,12 @@ class FoodCategoryPicker extends Component {
 
   openPicker(instance) {
     instance.setState({ opened: true });
+    instance.context.isSwipable = false;
   }
 
   closePicker(instance) {
     instance.setState({ opened: false });
+    instance.context.isSwipable = true;
     instance.store.editItemCategory(instance.meal, instance.mealItemIndex, instance.state.selected);
   }
 
