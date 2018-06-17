@@ -1,5 +1,5 @@
 const Icon = props => (
-  <span class={`icon-wrapper${props.class && " " + props.class}`}>
+  <span class={`icon-wrapper${(props.class && " " + props.class) || ""}`}>
     <svg class="icon">
       <use xlinkHref={`#icon-${props.name}`} />
     </svg>
