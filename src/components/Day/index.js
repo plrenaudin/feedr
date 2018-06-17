@@ -2,6 +2,7 @@ import Meal from "../Meal";
 import { inject, observer } from "inferno-mobx";
 import { longFormatDate } from "../../modules/formatter";
 import { linkEvent } from "inferno";
+import Icon from "../Icon";
 
 const editNotes = (store, event) => {
   store.editNotes(event.target.value);
@@ -16,10 +17,7 @@ const Day = ({ store }) => {
       <Meal meal="snack" />
       <Meal meal="evening" />
       <h3>
-        <span class="fa-layers fa-fw">
-          <i class="fas fa-circle" data-fa-transform="grow-6" />
-          <i class="fas fa-edit" data-fa-transform="shrink-4" />
-        </span>
+        <Icon class="circle-icon" name="pencil" />
         Notes
       </h3>
       <textarea

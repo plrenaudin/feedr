@@ -1,6 +1,7 @@
 import InputField from "../InputField";
 import { inject, observer } from "inferno-mobx";
 import FoodCategoryPicker from "../FoodCategoryPicker";
+import Icon from "../Icon";
 
 const addItem = (store, meal) => value => {
   store.addItem(meal, value);
@@ -22,7 +23,7 @@ const MealItem = ({ index, item, meal, store }) => (
     <div class="actions">
       <FoodCategoryPicker {...{ meal, index }} />
       <a role="button" onClick={removeItem(store, meal, index)}>
-        <i class="far fa-trash-alt" />
+        <Icon name="bin" />
       </a>
     </div>
   </li>
@@ -31,10 +32,7 @@ const MealItem = ({ index, item, meal, store }) => (
 const Meal = ({ meal, store }) => (
   <div class="meal">
     <h3>
-      <span class="fa-layers fa-fw">
-        <i class="fas fa-circle" data-fa-transform="grow-6" />
-        <i class="fas fa-utensils" data-fa-transform="shrink-2" />
-      </span>
+      <Icon name="spoon-knife" class="circle-icon" />
       {labels[meal]}
     </h3>
     <div class="mealContent">

@@ -7,9 +7,17 @@ exports[`Matches the snapshot 1`] = `
   <a
     role="button"
   >
-    <i
-      class="fas fa-tag"
-    />
+    <span
+      class="icon-wrapperundefined"
+    >
+      <svg
+        class="icon"
+      >
+        <use
+          xlink:href="#icon-price-tag"
+        />
+      </svg>
+    </span>
   </a>
 </div>
 `;

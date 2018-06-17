@@ -6,16 +6,15 @@ exports[`Matches the snapshot 1`] = `
 >
   <h3>
     <span
-      class="fa-layers fa-fw"
+      class="icon-wrapper circle-icon"
     >
-      <i
-        class="fas fa-circle"
-        data-fa-transform="grow-6"
-      />
-      <i
-        class="fas fa-utensils"
-        data-fa-transform="shrink-2"
-      />
+      <svg
+        class="icon"
+      >
+        <use
+          xlink:href="#icon-spoon-knife"
+        />
+      </svg>
     </span>
     Diner
   </h3>
@@ -36,17 +35,33 @@ exports[`Matches the snapshot 1`] = `
             <a
               role="button"
             >
-              <i
-                class="fas fa-tag"
-              />
+              <span
+                class="icon-wrapperundefined"
+              >
+                <svg
+                  class="icon"
+                >
+                  <use
+                    xlink:href="#icon-price-tag"
+                  />
+                </svg>
+              </span>
             </a>
           </div>
           <a
             role="button"
           >
-            <i
-              class="far fa-trash-alt"
-            />
+            <span
+              class="icon-wrapperundefined"
+            >
+              <svg
+                class="icon"
+              >
+                <use
+                  xlink:href="#icon-bin"
+                />
+              </svg>
+            </span>
           </a>
         </div>
       </li>
@@ -63,17 +78,33 @@ exports[`Matches the snapshot 1`] = `
             <a
               role="button"
             >
-              <i
-                class="fas fa-tag"
-              />
+              <span
+                class="icon-wrapperundefined"
+              >
+                <svg
+                  class="icon"
+                >
+                  <use
+                    xlink:href="#icon-price-tag"
+                  />
+                </svg>
+              </span>
             </a>
           </div>
           <a
             role="button"
           >
-            <i
-              class="far fa-trash-alt"
-            />
+            <span
+              class="icon-wrapperundefined"
+            >
+              <svg
+                class="icon"
+              >
+                <use
+                  xlink:href="#icon-bin"
+                />
+              </svg>
+            </span>
           </a>
         </div>
       </li>

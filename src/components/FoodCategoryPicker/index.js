@@ -1,6 +1,7 @@
 import { Component, linkEvent } from "inferno";
 import { inject } from "inferno-mobx";
 import { FOOD_TYPES } from "../../modules/store";
+import Icon from "../Icon";
 
 class FoodCategoryPicker extends Component {
   constructor(props, context) {
@@ -42,7 +43,7 @@ class FoodCategoryPicker extends Component {
     return (
       <div class="food-type-picker">
         <a role="button" onClick={linkEvent(this, this.openPicker)}>
-          <i class="fas fa-tag" />
+          <Icon name="price-tag" />
         </a>
         {this.state.opened && (
           <div class="picker">
@@ -57,7 +58,7 @@ class FoodCategoryPicker extends Component {
                   >
                     {FOOD_TYPES[key]}
                     <span class="check">
-                      <i class="fas fa-check" />
+                      <Icon name="checkmark" />
                     </span>
                   </li>
                 ))}
