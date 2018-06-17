@@ -42,7 +42,7 @@ exports[`Matches the snapshot 1`] = `
                 role="button"
               >
                 <span
-                  class="icon-wrapperundefined"
+                  class="icon-wrapper"
                 >
                   <svg
                     class="icon"
@@ -58,7 +58,7 @@ exports[`Matches the snapshot 1`] = `
               role="button"
             >
               <span
-                class="icon-wrapperundefined"
+                class="icon-wrapper"
               >
                 <svg
                   class="icon"
@@ -167,7 +167,7 @@ exports[`Matches the snapshot 1`] = `
                 role="button"
               >
                 <span
-                  class="icon-wrapperundefined"
+                  class="icon-wrapper"
                 >
                   <svg
                     class="icon"
@@ -183,7 +183,7 @@ exports[`Matches the snapshot 1`] = `
               role="button"
             >
               <span
-                class="icon-wrapperundefined"
+                class="icon-wrapper"
               >
                 <svg
                   class="icon"
@@ -210,7 +210,7 @@ exports[`Matches the snapshot 1`] = `
                 role="button"
               >
                 <span
-                  class="icon-wrapperundefined"
+                  class="icon-wrapper"
                 >
                   <svg
                     class="icon"
@@ -226,7 +226,7 @@ exports[`Matches the snapshot 1`] = `
               role="button"
             >
               <span
-                class="icon-wrapperundefined"
+                class="icon-wrapper"
               >
                 <svg
                   class="icon"

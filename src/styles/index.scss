@@ -137,10 +137,12 @@ h2 {
     color: $fgColor;
     li {
       margin: 0.5rem 0;
+      line-height: 1.5rem;
       @include shadow;
       .check {
         display: none;
       }
+
       &.selected {
         box-shadow: none;
         border-radius: 3px;
