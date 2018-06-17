@@ -6,8 +6,7 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "npm run-script lint && jest src",
-    "lint": "eslint --fix .",
-    "pre-push": "npm test"
+    "lint": "eslint --fix ."
   },
   "author": "",
   "license": "ISC",
@@ -45,5 +44,10 @@
   },
   "prettier": {
     "printWidth": 100
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
   }
 }
