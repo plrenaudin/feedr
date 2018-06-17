@@ -1,6 +1,7 @@
 import { linkEvent, Component } from "inferno";
 import db from "../../modules/db";
 import { shortFormatDate } from "../../modules/formatter";
+import Icon from "../Icon";
 
 class ExportImport extends Component {
   constructor(props) {
@@ -46,10 +47,11 @@ class ExportImport extends Component {
     return (
       <div class="export-import">
         <div class="export" onClick={linkEvent(this, this.exportData)}>
-          <i class="fas fa-download" />
+          <Icon name="download3" />
         </div>
         <div class="import" onClick={linkEvent(this, this.toggleInput)}>
-          <i class="fas fa-upload" />
+          <Icon name="upload3" />
+
           {this.state.displayInput && (
             <input type="file" onChange={linkEvent(this, this.onFileSelected)} />
           )}

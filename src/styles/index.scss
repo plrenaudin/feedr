@@ -10,14 +10,19 @@ body {
   background-color: $bgColor;
   font-family: Helvetica, Arial, sans-serif;
   color: $fontColor;
+  overflow: hidden;
+}
+#root {
+  height: 100vh;
+  overflow: auto;
 }
 
 input[type="text"],
 textarea {
-  @include shadow;
   width: 100%;
 }
 textarea {
+  @include shadow;
   min-height: 5rem;
 }
 .content {
@@ -57,6 +62,24 @@ button:focus {
 h2 {
   font-weight: 100;
 }
+.icon {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.circle-icon {
+  border: 1px solid grey;
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  border-radius: 50%;
+  background-color: $fgColor;
+}
 .color1 {
   background-color: $color1;
 }
@@ -79,19 +102,14 @@ h2 {
   }
   h3 {
     margin-left: 1rem;
-    padding-left: 1.5rem;
+    padding: 0.5rem 0 0 1.5rem;
     line-height: 3rem;
     border-left: 2px solid $grey;
-    .fa-layers {
-      margin-left: -2.3rem;
-      margin-right: 1rem;
-    }
-    .fa-circle {
-      color: $mainColor;
-    }
-    .fa-utensils,
-    .fa-edit {
+    .circle-icon {
+      background-color: $mainColor;
       color: $fgColor;
+      margin-left: -2.5rem;
+      margin-right: 1rem;
     }
   }
 }

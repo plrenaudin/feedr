@@ -64,9 +64,9 @@ class Swipeable extends Component {
 
   componentDidMount() {
     if (!this.rootDiv) return;
-    this.rootDiv.addEventListener("touchstart", this.onTouchStart, false);
-    this.rootDiv.addEventListener("touchend", this.onTouchEnd, false);
-    this.rootDiv.addEventListener("touchmove", this.onTouchMove, false);
+    this.rootDiv.addEventListener("touchstart", this.onTouchStart, { passive: true });
+    this.rootDiv.addEventListener("touchend", this.onTouchEnd, { passive: true });
+    this.rootDiv.addEventListener("touchmove", this.onTouchMove, { passive: true });
   }
 
   componentWillUnmount() {
