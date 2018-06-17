@@ -19,10 +19,10 @@ body {
 
 input[type="text"],
 textarea {
-  @include shadow;
   width: 100%;
 }
 textarea {
+  @include shadow;
   min-height: 5rem;
 }
 .content {
