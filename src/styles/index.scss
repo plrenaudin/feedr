@@ -102,10 +102,12 @@ h2 {
   }
   h3 {
     margin-left: 1rem;
-    padding-left: 1.5rem;
+    padding: 0.5rem 0 0 1.5rem;
     line-height: 3rem;
     border-left: 2px solid $grey;
-    .icon-wrapper {
+    .circle-icon {
+      background-color: $mainColor;
+      color: $fgColor;
       margin-left: -2.5rem;
       margin-right: 1rem;
     }

@@ -32,7 +32,11 @@ const MealItem = ({ index, item, meal, store }) => (
 const Meal = ({ meal, store }) => (
   <div class="meal">
     <h3>
-      <Icon name="spoon-knife" class="circle-icon" />
+      {meal === "snack" ? (
+        <Icon name="mug" class="circle-icon" />
+      ) : (
+        <Icon name="spoon-knife" class="circle-icon" />
+      )}
       {labels[meal]}
     </h3>
     <div class="mealContent">
