@@ -6,7 +6,8 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "npm run-script lint && jest src",
-    "lint": "eslint --fix ."
+    "lint": "eslint --fix .",
+    "prepush": "npm test"
   },
   "author": "",
   "license": "ISC",
@@ -40,10 +41,7 @@
     "autoprefixer": "^8.5.0"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
   },
   "prettier": {
     "printWidth": 100
