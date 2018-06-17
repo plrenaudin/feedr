@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "prepush": "npm test",
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "npm run-script lint && jest src",
-    "lint": "eslint --fix .",
-    "precommit": "npm test"
+    "test": "npm run lint && jest src",
+    "lint": "eslint --fix ."
   },
   "author": "",
   "license": "ISC",
@@ -45,10 +45,5 @@
   },
   "prettier": {
     "printWidth": 100
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm test"
-    }
   }
 }
