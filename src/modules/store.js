@@ -38,7 +38,7 @@ export default class Store {
   );
 
   addItem = action((meal, data) => {
-    this.day[meal].push({ name: data.trim() });
+    this.day[meal].push({ name: data.trim(), categories: [] });
     this.save();
   });
 
