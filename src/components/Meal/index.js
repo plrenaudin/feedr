@@ -2,6 +2,7 @@ import InputField from "../InputField";
 import { inject, observer } from "inferno-mobx";
 import FoodCategoryPicker from "../FoodCategoryPicker";
 import Icon from "../Icon";
+import Pie from "../Pie";
 
 const addItem = (store, meal) => value => {
   store.addItem(meal, value);
@@ -17,9 +18,16 @@ const labels = {
   evening: "Diner"
 };
 
-const MealItem = ({ index, item, meal, store }) => (
+const MealItem = observer(({ index, item, meal, store }) => (
   <li>
-    <span>{item.name}</span>
+    <Pie
+      categories={
+        store.day[meal].length >= index + 1 &&
+        store.day[meal][index] &&
+        store.day[meal][index].categories
+      }
+    />
+    <span class="meal-item-name">{item.name}</span>
     <div class="actions">
       <FoodCategoryPicker {...{ meal, index }} />
       <a role="button" onClick={removeItem(store, meal, index)}>
@@ -27,7 +35,7 @@ const MealItem = ({ index, item, meal, store }) => (
       </a>
     </div>
   </li>
-);
+));
 
 const Meal = ({ meal, store }) => (
   <div class="meal">

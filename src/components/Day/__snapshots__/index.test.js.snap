@@ -29,7 +29,10 @@ exports[`Matches the snapshot 1`] = `
     >
       <ul>
         <li>
-          <span>
+          
+          <span
+            class="meal-item-name"
+          >
             morning Meal 1
           </span>
           <div
@@ -154,7 +157,10 @@ exports[`Matches the snapshot 1`] = `
     >
       <ul>
         <li>
-          <span>
+          
+          <span
+            class="meal-item-name"
+          >
             evening Meal 1
           </span>
           <div
@@ -197,7 +203,10 @@ exports[`Matches the snapshot 1`] = `
           </div>
         </li>
         <li>
-          <span>
+          
+          <span
+            class="meal-item-name"
+          >
             evening Meal 2
           </span>
           <div
