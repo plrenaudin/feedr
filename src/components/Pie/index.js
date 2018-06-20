@@ -1,3 +1,5 @@
+import Icon from "../Icon";
+
 // Pie chart svg, kudos to David Gilbertson's HN article: (https://hackernoon.com/a-simple-pie-chart-in-svg-dbdd653b6936)
 const colors = ["#f44336", "#4caf50", "#795548", "#ff9800", "#2196f3"];
 
@@ -39,9 +41,13 @@ const Pie = ({ categories }) => {
 
   return (
     <div class="pie">
-      <svg viewBox="-1 -1 2 2" style="transform: rotate(-90deg)">
-        {pathEls}
-      </svg>
+      {pathEls.length ? (
+        <svg viewBox="-1 -1 2 2" style="transform: rotate(-90deg)">
+          {pathEls}
+        </svg>
+      ) : (
+        <Icon name="question" />
+      )}
     </div>
   );
 };
