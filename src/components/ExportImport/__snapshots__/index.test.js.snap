@@ -1,3 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches the snapshot 1`] = `undefined`;
+exports[`Matches the snapshot 1`] = `
+<div
+  class="export-import"
+>
+  <div
+    class="export"
+  >
+    <span
+      class="icon-wrapper"
+    >
+      <svg
+        class="icon"
+      >
+        <use
+          xlink:href="#icon-download3"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="import"
+  >
+    <label>
+      <span
+        class="icon-wrapper"
+      >
+        <svg
+          class="icon"
+        >
+          <use
+            xlink:href="#icon-upload3"
+          />
+        </svg>
+      </span>
+      <input
+        type="file"
+      />
+    </label>
+  </div>
+</div>
+`;
