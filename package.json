@@ -29,7 +29,6 @@
     "inferno-mobx": "^5.0.6",
     "jest": "^22.4.4",
     "lint-staged": "^7.1.1",
-    "lodash": "^4.17.10",
     "mobx": "^4.3.0",
     "node-sass": "^4.9.0",
     "parcel-bundler": "^1.9.1",

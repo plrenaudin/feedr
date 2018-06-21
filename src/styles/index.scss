@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./responsive.scss";
 
 * {
   padding: 0;
@@ -15,6 +16,8 @@ body {
 #root {
   height: 100vh;
   overflow: auto;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
 input[type="text"],
@@ -97,6 +100,14 @@ h2 {
 }
 .color5 {
   background-color: $color5;
+}
+.left-right {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 0;
+  .left {
+    transform: rotate(180deg);
+  }
 }
 .day {
   margin: 0.5rem 0;
