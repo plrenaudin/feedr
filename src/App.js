@@ -4,6 +4,7 @@ import { inject } from "inferno-mobx";
 import ExportImport from "./components/ExportImport";
 import Swipeable from "./components/Swipeable";
 import appContext from "./modules/context";
+import ArrowNavigation from "./components/ArrowNavigation";
 
 class App extends Component {
   constructor(props) {
@@ -25,10 +26,11 @@ class App extends Component {
   render() {
     return (
       <Swipeable onLeftSwipe={this.onLeftSwipe} onRightSwipe={this.onRightSwipe}>
-        <div class="content">
+        <ArrowNavigation onLeft={this.onRightSwipe} onRight={this.onLeftSwipe} />
+        <section class="content">
           <Day />
           <ExportImport />
-        </div>
+        </section>
       </Swipeable>
     );
   }
