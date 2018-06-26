@@ -45,18 +45,20 @@ class Swipeable extends Component {
         break;
     }
 
-    setTimeout(() => {
-      this.setState({
-        transition,
-        transform: "none"
-      });
-      callback && callback();
-    }, animationDurationSeconds * 0.5 * 1000);
-    setTimeout(() => {
-      this.setState({
-        transition: "none"
-      });
-    }, animationDurationSeconds * 1000);
+    if (callback) {
+      setTimeout(() => {
+        this.setState({
+          transition,
+          transform: "none"
+        });
+        callback && callback();
+      }, animationDurationSeconds * 0.5 * 1000);
+      setTimeout(() => {
+        this.setState({
+          transition: "none"
+        });
+      }, animationDurationSeconds * 1000);
+    }
   };
 
   onTouchMove = e =>
