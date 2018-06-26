@@ -2,15 +2,15 @@
 
 ![build](https://travis-ci.org/plrenaudin/feedr.svg?branch=master)
 
+WIP
+
 ## What it does
 
-Very simple food tracking web application.
+Very simple food tracking web application installable on your mobile (PWA - support)
 
 ## How to use it
 
 Just go to [feedr.plrenaudin.com](feedr.plrenaudin.com) with your mobile phone
-
-This is a PWA that you can install on your device.
 
 ## How it works under the hood
 
