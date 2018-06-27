@@ -33,7 +33,7 @@ exports[`Matches the snapshot 1`] = `
           class="actions"
         >
           <div
-            class="food-type-picker"
+            class="overlay food-type-picker"
           >
             <a
               role="button"
@@ -79,7 +79,7 @@ exports[`Matches the snapshot 1`] = `
           class="actions"
         >
           <div
-            class="food-type-picker"
+            class="overlay food-type-picker"
           >
             <a
               role="button"

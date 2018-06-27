@@ -5,6 +5,9 @@ import ExportImport from "./components/ExportImport";
 import Swipeable from "./components/Swipeable";
 import appContext from "./modules/context";
 import ArrowNavigation from "./components/ArrowNavigation";
+import Overlay from "./components/Overlay";
+import Stats from "./components/Stats";
+import Icon from "./components/Icon";
 
 class App extends Component {
   constructor(props) {
@@ -27,9 +30,12 @@ class App extends Component {
     return (
       <Swipeable onLeftSwipe={this.onLeftSwipe} onRightSwipe={this.onRightSwipe}>
         <ArrowNavigation onLeft={this.onRightSwipe} onRight={this.onLeftSwipe} />
+        <Overlay button={<Icon name="pie-chart" />} class="stats">
+          <Stats />
+          <ExportImport />
+        </Overlay>
         <section class="content">
           <Day />
-          <ExportImport />
         </section>
       </Swipeable>
     );

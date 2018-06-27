@@ -13,6 +13,8 @@ export const FOOD_TYPES = {
   5: "Dairy"
 };
 
+export const MEALS = ["morning", "noon", "snack", "evening"];
+
 export default class Store {
   day = observable({ ...EMPTY_RECORD, date: shortFormatDate() });
   constructor() {
@@ -73,6 +75,24 @@ export default class Store {
       })
       .catch(e => console.error(e));
   });
+
+  fetch(dates) {
+    return db.get(dates);
+  }
+
+  fetchStats(dates = this.day.date) {
+    return this.fetch(dates)
+      .then(data => this.extractDayData(data))
+      .catch(e => console.error(e));
+  }
+
+  extractDayData(day) {
+    let data = [];
+    for (const meal of MEALS) {
+      data = (day && day[meal] && data.concat(...day[meal].map(i => i.categories))) || [];
+    }
+    return data.sort();
+  }
 
   save() {
     return db.set(this.day.date, toJS(this.day)).catch(e => console.error(e));
