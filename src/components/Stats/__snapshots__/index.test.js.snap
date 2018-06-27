@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Matches the snapshot 1`] = `
-<div
-  class="overlay food-type-picker"
+<section
+  class="stats"
 >
-  <a
-    role="button"
+  <div
+    class="pie"
   >
     <span
       class="icon-wrapper"
@@ -14,10 +14,10 @@ exports[`Matches the snapshot 1`] = `
         class="icon"
       >
         <use
-          xlink:href="#icon-price-tag"
+          xlink:href="#icon-question"
         />
       </svg>
     </span>
-  </a>
-</div>
+  </div>
+</section>
 `;

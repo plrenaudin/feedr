@@ -34,7 +34,7 @@ class FoodCategoryPicker extends Component {
 
   render() {
     return (
-      <Overlay button={<Icon name="price-tag" />} onClose={this.save}>
+      <Overlay button={<Icon name="price-tag" />} onClose={this.save} class="food-type-picker">
         <ul $HasKeyedChildren>
           {Object.keys(FOOD_TYPES).map(key => (
             <li

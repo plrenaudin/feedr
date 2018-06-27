@@ -20,8 +20,9 @@ class Overlay extends Component {
   };
 
   render() {
+    const classes = ["overlay", this.props.class].filter(Boolean).join(" ");
     return (
-      <div class="food-type-picker">
+      <div class={classes}>
         <a role="button" onClick={this.openPicker}>
           {this.props.button}
         </a>
