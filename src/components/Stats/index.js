@@ -2,6 +2,8 @@ import { inject } from "inferno-mobx";
 import { Component } from "inferno";
 import Pie from "../Pie";
 import { DAY, MONTH, WEEK } from "../../modules/dateRangeEnum";
+import { longFormatDate } from "../../modules/formatter";
+import { startOfWeek, lastDayOfWeek, lastDayOfMonth, startOfMonth } from "date-fns";
 
 const defaultState = () => ({ data: [], selected: DAY });
 
@@ -29,6 +31,18 @@ class Stats extends Component {
     this.setState(defaultState());
   }
 
+  displayTitle() {
+    const day = this.store.day.date;
+    switch (this.state.selected) {
+      case DAY:
+        return longFormatDate(day);
+      case WEEK:
+        return `${longFormatDate(startOfWeek(day))} to ${longFormatDate(lastDayOfWeek(day))}`;
+      case MONTH:
+        return `${longFormatDate(startOfMonth(day))} to ${longFormatDate(lastDayOfMonth(day))}`;
+    }
+  }
+
   render() {
     return (
       <section class="stats">
@@ -43,6 +57,7 @@ class Stats extends Component {
             Month
           </li>
         </ul>
+        <h2>{this.displayTitle()}</h2>
         <Pie categories={this.state.data} />
       </section>
     );
