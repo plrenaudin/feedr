@@ -26,7 +26,10 @@ const onFileSelected = e => {
 const importData = data => {
   try {
     const parsed = JSON.parse(data);
-    db.import(parsed).catch(e => console.error(e));
+    db
+      .import(parsed)
+      .then(() => window.location.reload())
+      .catch(e => console.error(e));
   } catch (e) {
     console.error(e);
   }
@@ -40,7 +43,7 @@ const ExportImport = () => (
     <div class="import">
       <label>
         <Icon name="upload3" />
-        <input type="file" onChange={onFileSelected} />
+        <input type="file" onChange={onFileSelected} accept=".json" />
       </label>
     </div>
   </div>
