@@ -23,6 +23,9 @@ exports[`Matches the snapshot 1`] = `
       Month
     </li>
   </ul>
+  <h2>
+    Thursday 7th June
+  </h2>
   <div
     class="pie"
   >

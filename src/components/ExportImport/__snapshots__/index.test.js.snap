@@ -35,6 +35,7 @@ exports[`Matches the snapshot 1`] = `
         </svg>
       </span>
       <input
+        accept=".json"
         type="file"
       />
     </label>
