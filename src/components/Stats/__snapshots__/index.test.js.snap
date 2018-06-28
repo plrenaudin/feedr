@@ -4,6 +4,25 @@ exports[`Matches the snapshot 1`] = `
 <section
   class="stats"
 >
+  <ul
+    class="control"
+  >
+    <li
+      class="selected"
+    >
+      Day
+    </li>
+    <li
+      class="false"
+    >
+      Week
+    </li>
+    <li
+      class="false"
+    >
+      Month
+    </li>
+  </ul>
   <div
     class="pie"
   >

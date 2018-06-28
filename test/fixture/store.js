@@ -16,6 +16,22 @@ const data = {
     noon: [{ name: "noon Meal 1" }],
     snack: [],
     notes: ""
+  },
+  "2018-06-11": {
+    date: "2018-06-08",
+    evening: [{ name: "evening Meal 1" }],
+    morning: [],
+    noon: [{ name: "noon Meal 1" }],
+    snack: [],
+    notes: ""
+  },
+  "2018-06-28": {
+    date: "2018-06-08",
+    evening: [{ name: "evening Meal 1" }],
+    morning: [],
+    noon: [{ name: "noon Meal 1" }],
+    snack: [],
+    notes: ""
   }
 };
 

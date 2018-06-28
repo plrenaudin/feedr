@@ -1,7 +1,8 @@
 $bgColor: #f8f8f8;
 $fgColor: #fefefe;
-$shadow: #888;
-$fontColor: #333;
+$shadowColor: #888;
+$fontColor: #444;
+$iconColor: #888;
 $mainColor: #8bc34a;
 $secondaryColor: #ff9800;
 $mainColorBg: lighten(#8bc34a, 30);
@@ -18,7 +19,7 @@ $color4: #ff9800;
 $color5: #2196f3;
 
 @mixin shadow {
-  box-shadow: 0 1px 3px $shadow;
+  box-shadow: 0 1px 3px $shadowColor;
 }
 
 @mixin inputSpacing {

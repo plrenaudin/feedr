@@ -2,6 +2,8 @@ import { observable, action, toJS, configure } from "mobx";
 import db, { EMPTY_RECORD } from "./db";
 import { shortFormatDate } from "./formatter";
 import addDays from "date-fns/add_days";
+import { DAY, MONTH, WEEK } from "./dateRangeEnum";
+import { startOfWeek, getDaysInMonth, startOfMonth } from "date-fns";
 
 configure({ enforceActions: true });
 
@@ -80,10 +82,44 @@ export default class Store {
     return db.get(dates);
   }
 
-  fetchStats(dates = this.day.date) {
-    return this.fetch(dates)
-      .then(data => this.extractDayData(data))
+  getDatesFromDateRange(dateRange) {
+    let dates;
+    let firstDayOfWeek;
+    let firstDayOfMonth;
+    switch (dateRange) {
+      case DAY:
+        dates = this.day.date;
+        break;
+      case WEEK:
+        firstDayOfWeek = startOfWeek(this.day.date);
+        dates = Array.from(Array(7).keys()).map(i =>
+          shortFormatDate(addDays(firstDayOfWeek, i + 1))
+        );
+        break;
+      case MONTH:
+        firstDayOfMonth = startOfMonth(this.day.date);
+        dates = Array.from(Array(getDaysInMonth(this.day.date)).keys()).map(i =>
+          shortFormatDate(addDays(firstDayOfMonth, i))
+        );
+        break;
+    }
+    return dates;
+  }
+
+  fetchStats(dateRange = DAY) {
+    return this.fetch(this.getDatesFromDateRange(dateRange))
+      .then(data => this.extractStatsData(data))
       .catch(e => console.error(e));
+  }
+
+  extractStatsData(stats) {
+    let data = [];
+    if (Array.isArray(stats)) {
+      data = [].concat(...stats.map(i => this.extractDayData(i)));
+    } else {
+      data = this.extractDayData(stats);
+    }
+    return data.sort();
   }
 
   extractDayData(day) {
@@ -91,7 +127,7 @@ export default class Store {
     for (const meal of MEALS) {
       data = (day && day[meal] && data.concat(...day[meal].map(i => i.categories))) || [];
     }
-    return data.sort();
+    return data;
   }
 
   save() {
