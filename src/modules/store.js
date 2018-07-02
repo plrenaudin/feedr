@@ -1,4 +1,4 @@
-import { observable, action, toJS, configure } from "mobx";
+import { observable, action, toJS, configure, reaction } from "mobx";
 import db, { EMPTY_RECORD } from "./db";
 import { shortFormatDate } from "./formatter";
 import addDays from "date-fns/add_days";
@@ -23,6 +23,14 @@ export default class Store {
     this.load(shortFormatDate());
   }
 
+  enableAutosave() {
+    this.autoSave = reaction(() => Object.keys(this.day).map(i => this.day[i]), () => this.save());
+  }
+
+  disableAutosave() {
+    this.autoSave && this.autoSave();
+  }
+
   set = action(
     ({
       date = shortFormatDate(),
@@ -42,23 +50,23 @@ export default class Store {
   );
 
   addItem = action((meal, data) => {
-    this.day[meal].push({ name: data.trim(), categories: [] });
-    this.save();
+    this.day[meal] = this.day[meal].concat({ name: data.trim(), categories: [] });
   });
 
   removeItem = action((meal, index) => {
-    this.day[meal].splice(index, 1);
-    this.save();
+    const copy = [...this.day[meal]];
+    copy.splice(index, 1);
+    this.day[meal] = copy;
   });
 
   editItemCategory = action((meal, index, data) => {
-    this.day[meal][index].categories = data;
-    this.save();
+    const copy = [...this.day[meal]];
+    copy[index].categories = data;
+    this.day[meal] = copy;
   });
 
   editNotes = action(notes => {
     this.day.notes = notes.trim();
-    this.save();
   });
 
   nextDay() {
@@ -70,10 +78,12 @@ export default class Store {
   }
 
   load = action(date => {
+    this.disableAutosave();
     return db
       .get(date)
       .then(data => {
         this.set(data || { date });
+        this.enableAutosave();
       })
       .catch(e => console.error(e));
   });
