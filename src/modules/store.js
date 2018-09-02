@@ -5,7 +5,7 @@ import addDays from "date-fns/add_days";
 import { DAY, MONTH, WEEK } from "./dateRangeEnum";
 import { startOfWeek, getDaysInMonth, startOfMonth } from "date-fns";
 
-configure({ enforceActions: true });
+configure({ enforceActions: "always" });
 
 export const FOOD_TYPES = {
   1: "Fruits",
@@ -101,10 +101,8 @@ export default class Store {
         dates = this.day.date;
         break;
       case WEEK:
-        firstDayOfWeek = startOfWeek(this.day.date);
-        dates = Array.from(Array(7).keys()).map(i =>
-          shortFormatDate(addDays(firstDayOfWeek, i + 1))
-        );
+        firstDayOfWeek = startOfWeek(this.day.date, { weekStartsOn: 1 });
+        dates = Array.from(Array(7).keys()).map(i => shortFormatDate(addDays(firstDayOfWeek, i)));
         break;
       case MONTH:
         firstDayOfMonth = startOfMonth(this.day.date);

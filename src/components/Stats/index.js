@@ -37,7 +37,9 @@ class Stats extends Component {
       case DAY:
         return longFormatDate(day);
       case WEEK:
-        return `${longFormatDate(startOfWeek(day))} to ${longFormatDate(lastDayOfWeek(day))}`;
+        return `${longFormatDate(startOfWeek(day, { weekStartsOn: 1 }))} to ${longFormatDate(
+          lastDayOfWeek(day, { weekStartsOn: 1 })
+        )}`;
       case MONTH:
         return `${longFormatDate(startOfMonth(day))} to ${longFormatDate(lastDayOfMonth(day))}`;
     }
